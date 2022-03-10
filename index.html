@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News-Current</title>
+    <!--fonts awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!--style costumer-->
+    <link rel="stylesheet" href="main.css">
+    <!--google fonts style Roboto-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <!--animate.css-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <!--
+    <style>
+        /* Basic list things. */
+        .tarjetas {
+            display: flex;
+            justify-content: space-between;
+            align-items: left;
+            width: 100px;
+            height: 100px;
+            margin-top: 100px;
+            margin-bottom: 100px;
+            margin-left: 400px;
+
+        }
+
+        ul.movieposters img.imagen {
+            width: 70%;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        
+        }
+
+
+        .tarjeta ul.movieposters {
+            list-style: none;
+
+        }
+        
+            
+        
+
+        /* Animate everything to their 2d state when hovering the parent. */
+        
+
+
+        /* List items. Take note of the -perspective property. We assign the transform-style to
+    * make the info element tranform correctly with the parent. transition is used for animation
+    */
+        .tarjeta ul.movieposters li {
+            display: inline;
+            float: left;
+            -moz-box-shadow: 0 20px 30px rgb(247, 243, 243);
+            -webkit-transform: translateZ(30px) rotateY(30deg);
+            -webkit-transition-property:transform;
+            -webkit-transition-duration: 0.5s;
+
+        } 
+        /*se agrega el codigo siguiente igual que en movieinfon,
+         y un hover a el elemento li de la lista desordenada ul,
+         con su clase movieposter 
+         y se modifica el rotateY de (30 a 500 grados) para que la caja que rota en movieinfo quede de frente
+         y no de reverso,sino se agrega este codigo la imagen queda quieta y no rota.
+         (esto lo descubri haciendo pruebas porque no esta en el codigo).
+        */
+        ul.movieposters li:hover  {
+            -webkit-transform:  translateZ(50px) rotateY(500deg);
+            margin: -90px 0 0 30px;
+        }
+        /* When hovering, we change the perspective. Since this property is defined
+    * in the transition, it'll animate occordingly.
+    */
+        .tarjeta ul.movieposters li:hover {
+            -webkit-perspective: 5000;
+            
+        }
+
+        /* We use the tranform property to enhance the 3d effect, making it rotated.
+    * We also add some shadows here, just to add even more depth.
+    * Also, for the image, we capture the rotateY event to be animated (transition)
+    * /
+    #movieposters li img
+       { border:10px solid #fcfafa; -webkit-transform: rotateY(30deg);
+       -moz-box-shadow:0 3px 10px #888; -webkit-box-shadow:0 3px 10px #888;
+       -webkit-transition-property: transform; -webkit-transition-duration: 0.5s; }
+    
+    /* Rotate back when hovering the parent element */
+        .tarjeta ul.movieposters li:hover img {
+            -webkit-transform: rotateY(0deg);
+    
+        }
+
+        /* For the movie info box, we do almost the same as for the image. Still, we use
+    * some extra css (like the position, margin etc.) to place it on the correct place.
+    * Take note of the translateZ and rotateY properties to enhance the 3d effect.
+    */
+        .movieinfo {
+            border: 2px solid #030303;
+            padding: 20px;
+            width: 200px;
+            height: 180px;
+            background-color: #deddcd;
+            margin: -195px 0 0 30px;
+            position: absolute;
+            -moz-box-shadow: 0 20px 40px rgb(247, 243, 243);
+            -webkit-transform: translateZ(30px) rotateY(30deg);
+            -webkit-transition-property: transform, box-shadow, margin;
+            -webkit-transition-duration: 0.5s;
+        }
+
+        /* Animate everything to their 2d state when hovering the parent. */
+        ul.movieposters li:hover .movieinfo {
+            -webkit-transform:  translateZ(50px) rotateY(500deg);
+            margin: -100px 0 0 30px;
+        }
+
+        /* Some basic CSS for the movie info */
+        .movieinfo h3 {
+            color: #070606;
+            font-variant: small-caps;
+            font-family: Georgia, serif, Times;
+            text-align: center;
+            padding-bottom: 15px;
+        }
+
+        .movieinfo p {
+            padding-bottom: 15px;
+            color: #030303
+        }
+
+        .movieinfo a {
+            background-color: #050405;
+            padding: 5px 10px;
+            color: rgb(250, 246, 246);
+            text-decoration: none;
+            display: block;
+            width: 80px;
+            text-align: center;
+            margin: 0 auto;
+            -moz-border-radius: 5px;
+            -webkit-border-radius: 5px;
+        }
+
+        .movieinfo a:hover,
+        .movieinfo a:focus {
+            background-color: #1c0422;
+            color: #fff;
+        }
+    </style>-->
+</head>
+
+<body>
+    <button class="menu-btn"> 
+        <i class="fa-solid fa-bars"></i>
+    </button>
+
+    <div class="container">
+        <nav class="nav-main">
+
+            <img src="img/nav.jpeg" alt="news currents" class="nav-brand" />
+
+            <ul class="nav-menu show">
+
+
+                <li class="animate__animated animate__backInRight"><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                <li class="animate__animated animate__backInRight"><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                <li class="animate__animated animate__backInRight"><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+                <li class="animate__animated animate__backInRight"><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
+                <li class="animate__animated animate__backInRight"><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
+                <li class="animate__animated animate__backInRight"><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
+
+
+            </ul>
+            <ul class="nav-menu-right">
+
+                <li class="icono">
+                    <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+                </li>
+
+
+            </ul>
+
+        </nav>
+    </div>
+    <header>
+        <div class="tarjetas">
+            <ul class="movieposters">
+                <li>
+                    <img src="img/primavera.jpeg" alt="moda" class="imagen" />
+                    <div class="movieinfo">
+                        <h3 class="animate__animated animate__fadeInTopLeft">PRIMAVERA</h3>
+                        <p><small>With the world now aware of his dual life as the armored superhero Iron Man, billionaire inventor Tony...</small></p>
+                        <a class="animate__animated animate__slideInDown" href="#" title="moda">ALL Moda</a>
+                    </div>
+                </li>
+                <li>
+                    <img src="img/otoño.jpeg" alt="moda" class="imagen" />
+                    <div class="movieinfo">
+                        <h3 class="animate__animated animate__fadeInTopLeft">OTOÑO</h3>
+                        <p><small>With the world now aware of his dual life as the armored superhero Iron Man, billionaire inventor Tony...</small></p>
+                        <a class="animate__animated animate__slideInDown" href="#" title="moda">ALL Moda</a>
+                    </div>
+                </li>
+                <li>
+                    <img src="img/invierno.jpeg" alt="moda" class="imagen" />
+                    <div class="movieinfo">
+                        <h3 class="animate__animated animate__fadeInTopLeft">INVIERNO</h3>
+                        <p><small>With the world now aware of his dual life as the armored superhero Iron Man, billionaire inventor Tony...</small></p>
+                        <a class="animate__animated animate__slideInDown" href="#" title="moda">ALL Moda</a>
+                    </div>
+                </li>
+                <li>
+                    <img src="img/verano.jpeg" alt="moda" class="imagen" />
+                    <div class="movieinfo">
+                        <h3 class="animate__animated animate__fadeInTopLeft">VERANO</h3>
+                        <p><small>With the world now aware of his dual life as the armored superhero Iron Man, billionaire inventor Tony...</small></p>
+                        <a class="animate__animated animate__slideInDown" href="#" title="moda">ALL Moda</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <script src="scripts.js"></script>
+
+</body>
+
+
+</html>

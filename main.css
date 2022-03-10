@@ -1,0 +1,516 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: black;
+    color: white;
+    background-color: #431b7f;
+    background-image: url("data:image/svg+xml,%3Csvg width='84' height='48' viewBox='0 0 84 48' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h12v6H0V0zm28 8h12v6H28V8zm14-8h12v6H42V0zm14 0h12v6H56V0zm0 8h12v6H56V8zM42 8h12v6H42V8zm0 16h12v6H42v-6zm14-8h12v6H56v-6zm14 0h12v6H70v-6zm0-16h12v6H70V0zM28 32h12v6H28v-6zM14 16h12v6H14v-6zM0 24h12v6H0v-6zm0 8h12v6H0v-6zm14 0h12v6H14v-6zm14 8h12v6H28v-6zm-14 0h12v6H14v-6zm28 0h12v6H42v-6zm14-8h12v6H56v-6zm0-8h12v6H56v-6zm14 8h12v6H70v-6zm0 8h12v6H70v-6zM14 24h12v6H14v-6zm14-8h12v6H28v-6zM14 8h12v6H14V8zM0 8h12v6H0V8z' fill='%23080212' fill-opacity='0.20' fill-rule='evenodd'/%3E%3C/svg%3E");
+    font-size: 16px;
+    font-family: 'Oswald', sans-serif;
+    font-family: 'Roboto', sans-serif;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.container {
+    width: 90%;
+    margin: auto;
+}
+
+
+/*navigation*/
+
+.nav-main {
+    font-size: 17px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    padding: 30px 0;
+}
+
+.nav-brand {
+    width: 90px;
+    align-content: left;
+    border: 5px solid white;
+    margin-top: 80px;
+}
+
+.nav-main ul {
+    display: flex;
+    margin: 20px, 20px;
+}
+
+.nav-main ul li {
+    padding: 10px;
+}
+
+.nav-main ul li i {
+    font-size: 40px;
+}
+
+.nav-main ul.nav-menu {
+    flex: 1;
+    margin-left: 10px;
+}
+
+.nav-main ul.nav-menu li a:hover {
+    border-bottom: 2px solid white;
+}
+
+.nav-main ul.nav-menu-right li a:hover {
+    border-bottom: 2px solid white;
+}
+
+.nav-main ul.nav-menu-right li.icono a i {
+    font-size: 20px;
+}
+
+.menu-btn {
+    position: absolute;
+    font-size: 50px;
+    z-index: 2;
+}
+
+.nav-main ul.nav-menu li {
+    padding: 20px;
+}
+
+.tarjetas {
+    display: flex;
+    justify-content: space-between;
+    align-items: left;
+    width: 70px;
+    height: 100px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    margin-left: 400px;
+}
+
+
+/*clase donde se reduce o amplian las fotos de tarjetas*/
+
+.imagen {
+    width: 450%;
+    margin-top: 40px;
+    margin-bottom: 10px;
+    /*borde de la tarjeta*/
+    border: 10px solid white;
+}
+
+.tarjeta ul.movieposters {
+    list-style: none;
+}
+
+
+/* Animate everything to their 2d state when hovering the parent. */
+
+
+/* List items. Take note of the -perspective property. We assign the transform-style to
+* make the info element tranform correctly with the parent. transition is used for animation
+*/
+
+.tarjeta ul.movieposters li {
+    display: inline;
+    float: left;
+    -moz-box-shadow: 0 20px 30px rgb(247, 243, 243);
+    -webkit-transform: translateZ(30px) rotateY(30deg);
+    -webkit-transition-property: transform;
+    -webkit-transition-duration: 0.5s;
+}
+
+
+/*se agrega el codigo siguiente igual que en movieinfon,
+ y un hover a el elemento li de la lista desordenada ul,
+ con su clase movieposter 
+ y se modifica el rotateY de (30 a 500 grados) para que la caja que rota en movieinfo quede de frente
+ y no de reverso,sino se agrega este codigo la imagen queda quieta y no rota.
+ (esto lo descubri haciendo pruebas porque no esta en el codigo).
+*/
+
+ul.movieposters li:hover {
+    -webkit-transform: translateZ(50px) rotateY(500deg);
+    margin: -90px 0 0 30px;
+}
+
+
+/* When hovering, we change the perspective. Since this property is defined
+* in the transition, it'll animate occordingly.
+*/
+
+.tarjeta ul.movieposters li:hover {
+    -webkit-perspective: 5000;
+}
+
+
+/* We use the tranform property to enhance the 3d effect, making it rotated.
+* We also add some shadows here, just to add even more depth.
+* Also, for the image, we capture the rotateY event to be animated (transition)
+* /
+#movieposters li img
+{ border:10px solid #fcfafa; -webkit-transform: rotateY(30deg);
+-moz-box-shadow:0 3px 10px #888; -webkit-box-shadow:0 3px 10px #888;
+-webkit-transition-property: transform; -webkit-transition-duration: 0.5s; }
+
+/* Rotate back when hovering the parent element */
+
+.tarjeta ul.movieposters li:hover img {
+    -webkit-transform: rotateY(0deg);
+}
+
+
+/* For the movie info box, we do almost the same as for the image. Still, we use
+* some extra css (like the position, margin etc.) to place it on the correct place.
+* Take note of the translateZ and rotateY properties to enhance the 3d effect.
+*/
+
+
+/*clase de los recuadros inferiores de las fotos o tarjetas*/
+
+.movieinfo {
+    border: 10px solid #faf6f6;
+    padding: 20px;
+    width: 200px;
+    height: 180px;
+    background-color: #deddcd;
+    margin: -195px 0 0 30px;
+    position: absolute;
+    -moz-box-shadow: 0 20px 40px rgb(247, 243, 243);
+    -webkit-transform: translateZ(30px) rotateY(30deg);
+    -webkit-transition-property: transform, box-shadow, margin;
+    -webkit-transition-duration: 0.5s;
+}
+
+
+/* Animate everything to their 2d state when hovering the parent. */
+
+ul.movieposters li:hover .movieinfo {
+    -webkit-transform: translateZ(50px) rotateY(500deg);
+    margin: -100px 0 0 30px;
+}
+
+
+/* Some basic CSS for the movie info */
+
+.movieinfo h3 {
+    color: #070606;
+    font-variant: small-caps;
+    font-family: Georgia, serif, Times;
+    text-align: center;
+    padding-bottom: 15px;
+}
+
+.movieinfo p small {
+    padding-bottom: 10px;
+    color: #030303
+}
+
+.movieinfo a {
+    background-color: #050405;
+    padding: 5px 10px;
+    color: rgb(250, 246, 246);
+    text-decoration: none;
+    display: block;
+    width: 80px;
+    text-align: center;
+    margin: 0 auto;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+
+.movieinfo a:hover,
+.movieinfo a:focus {
+    background-color: #1c0422;
+    color: #fff;
+}
+
+
+/*pantalla menores que o hasta 700 px cuando es (max)*/
+
+@media (max-width: 768px) {
+    .nav-main ul.nav-menu {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: rgb(87, 84, 84);
+        height: 100%;
+        padding: 50px;
+        opacity: 0.9;
+        transform: translateX(-20px);
+        transition: transform .5s;
+    }
+    .nav-main ul.nav-menu li {
+        padding: 20px;
+    }
+    /*se cambia de -20px a -400px para que se desvaneszca la barra lateral*/
+    .nav-main ul.nav-menu.show {
+        transform: translatex(-400px);
+    }
+    /* Basic list things. */
+    .tarjetas {
+        display: flex;
+        justify-content: space-between;
+        align-items: left;
+        width: 100px;
+        height: 100px;
+        margin-top: 100px;
+        margin-bottom: 100px;
+        margin-left: 200px;
+        padding: auto;
+    }
+    .imagen {
+        width: 250%;
+        margin-top: 10px;
+        margin-bottom: 70px;
+        /*distancia desde el marco hacia adentro de la tarjeta*/
+        padding-left: 0px;
+    }
+    .tarjeta ul.movieposters {
+        list-style: none;
+    }
+    /* Animate everything to their 2d state when hovering the parent. */
+    /* List items. Take note of the -perspective property. We assign the transform-style to
+* make the info element tranform correctly with the parent. transition is used for animation
+*/
+    .tarjeta ul.movieposters li {
+        display: inline;
+        float: left;
+        -moz-box-shadow: 0 20px 30px rgb(247, 243, 243);
+        -webkit-transform: translateZ(30px) rotateY(30deg);
+        -webkit-transition-property: transform;
+        -webkit-transition-duration: 0.1s;
+    }
+    /*se agrega el codigo siguiente igual que en movieinfon,
+ y un hover a el elemento li de la lista desordenada ul,
+ con su clase movieposter 
+ y se modifica el rotateY de (30 a 500 grados) para que la caja que rota en movieinfo quede de frente
+ y no de reverso,sino se agrega este codigo la imagen queda quieta y no rota.
+ (esto lo descubri haciendo pruebas porque no esta en el codigo).
+*/
+    ul.movieposters li:hover {
+        -webkit-transform: translateZ(50px) rotateY(500deg);
+        margin: -90px 0 0 30px;
+    }
+    /* When hovering, we change the perspective. Since this property is defined
+* in the transition, it'll animate occordingly.
+*/
+    .tarjeta ul.movieposters li:hover {
+        -webkit-perspective: 5000;
+    }
+    /* We use the tranform property to enhance the 3d effect, making it rotated.
+* We also add some shadows here, just to add even more depth.
+* Also, for the image, we capture the rotateY event to be animated (transition)
+* /
+#movieposters li img
+{ border:10px solid #fcfafa; -webkit-transform: rotateY(30deg);
+-moz-box-shadow:0 3px 10px #888; -webkit-box-shadow:0 3px 10px #888;
+-webkit-transition-property: transform; -webkit-transition-duration: 0.5s; }
+
+/* Rotate back when hovering the parent element */
+    .tarjeta ul.movieposters li:hover img {
+        -webkit-transform: rotateY(0deg);
+    }
+    /* For the movie info box, we do almost the same as for the image. Still, we use
+* some extra css (like the position, margin etc.) to place it on the correct place.
+* Take note of the translateZ and rotateY properties to enhance the 3d effect.
+*/
+    .movieinfo {
+        border: 10px solid #faf7f7;
+        padding: 5px;
+        width: 150px;
+        height: 180px;
+        background-color: #deddcd;
+        margin: -180px 0 0 30px;
+        position: absolute;
+        -moz-box-shadow: 0 20px 40px rgb(247, 244, 244);
+        -webkit-transform: translateZ(30px) rotateY(30deg);
+        -webkit-transition-property: transform, box-shadow, margin;
+        -webkit-transition-duration: 0.1s;
+    }
+    /* Animate everything to their 2d state when hovering the parent. */
+    ul.movieposters li:hover .movieinfo {
+        -webkit-transform: translateZ(20px) rotateY(200deg);
+        margin: -100px 0 0 30px;
+    }
+    /* Some basic CSS for the movie info */
+    .movieinfo h3 {
+        color: #070606;
+        font-variant: small-caps;
+        font-family: Georgia, serif, Times;
+        text-align: center;
+        padding-bottom: 15px;
+    }
+    .movieinfo p small {
+        padding-bottom: 20px;
+        color: #050505
+    }
+    .movieinfo a {
+        background-color: #050405;
+        padding: 5px 10px;
+        color: rgb(250, 246, 246);
+        text-decoration: none;
+        display: block;
+        width: 80px;
+        text-align: center;
+        margin: 0 auto;
+        -moz-border-radius: 5px;
+        -webkit-border-radius: 5px;
+    }
+    .movieinfo a:hover {
+        background-color: #1c0422;
+        color: #fff;
+    }
+}
+
+
+/*para dispositivos moviles de hasta 500px*/
+
+@media (max-width: 500px) {
+    .nav-main ul.nav-menu {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: rgb(87, 84, 84);
+        height: 100%;
+        padding: 50px;
+        opacity: 0.9;
+        transform: translateX(-20px);
+        transition: transform .5s;
+    }
+    .nav-main ul.nav-menu li {
+        padding: 20px;
+    }
+    /*se cambia de -20px a -400px para que se desvaneszca la barra lateral*/
+    .nav-main ul.nav-menu.show {
+        transform: translatex(-400px);
+    }
+    /* Basic list things. */
+    .tarjetas {
+        display: flex;
+        justify-content: space-between;
+        align-items: left;
+        width: 100px;
+        height: 100px;
+        margin-top: 100px;
+        margin-bottom: 100px;
+        margin-left: 100px;
+        padding: auto;
+    }
+    .imagen {
+        width: 200%;
+        margin-top: 10px;
+        margin-bottom: 70px;
+        /*distancia desde el margen hasta la tarjeta*/
+        margin-left: 30px;
+        /*distancia del marco hacia adentro de la tarjeta*/
+        padding-left: 0px;
+    }
+    .tarjeta ul.movieposters {
+        list-style: none;
+    }
+    /* Animate everything to their 2d state when hovering the parent. */
+    /* List items. Take note of the -perspective property. We assign the transform-style to
+* make the info element tranform correctly with the parent. transition is used for animation
+*/
+    .tarjeta ul.movieposters li {
+        display: inline;
+        float: left;
+        -moz-box-shadow: 0 20px 30px rgb(247, 243, 243);
+        -webkit-transform: translateZ(30px) rotateY(30deg);
+        -webkit-transition-property: transform;
+        -webkit-transition-duration: 0.1s;
+    }
+    /*se agrega el codigo siguiente igual que en movieinfon,
+ y un hover a el elemento li de la lista desordenada ul,
+ con su clase movieposter 
+ y se modifica el rotateY de (30 a 500 grados) para que la caja que rota en movieinfo quede de frente
+ y no de reverso,sino se agrega este codigo la imagen queda quieta y no rota.
+ (esto lo descubri haciendo pruebas porque no esta en el codigo).
+*/
+    ul.movieposters li:hover {
+        -webkit-transform: translateZ(50px) rotateY(500deg);
+        margin: -90px 0 0 30px;
+    }
+    /* When hovering, we change the perspective. Since this property is defined
+* in the transition, it'll animate occordingly.
+*/
+    .tarjeta ul.movieposters li:hover {
+        -webkit-perspective: 5000;
+    }
+    /* We use the tranform property to enhance the 3d effect, making it rotated.
+* We also add some shadows here, just to add even more depth.
+* Also, for the image, we capture the rotateY event to be animated (transition)
+* /
+#movieposters li img
+{ border:10px solid #fcfafa; -webkit-transform: rotateY(30deg);
+-moz-box-shadow:0 3px 10px #888; -webkit-box-shadow:0 3px 10px #888;
+-webkit-transition-property: transform; -webkit-transition-duration: 0.5s; }
+
+/* Rotate back when hovering the parent element */
+    .tarjeta ul.movieposters li:hover img {
+        -webkit-transform: rotateY(0deg);
+    }
+    /* For the movie info box, we do almost the same as for the image. Still, we use
+* some extra css (like the position, margin etc.) to place it on the correct place.
+* Take note of the translateZ and rotateY properties to enhance the 3d effect.
+*/
+    .movieinfo {
+        border: 10px solid #f8f5f5;
+        padding: 5px;
+        width: 150px;
+        height: 180px;
+        background-color: #deddcd;
+        margin: -180px 0 0 30px;
+        position: absolute;
+        -moz-box-shadow: 0 20px 40px rgb(247, 244, 244);
+        -webkit-transform: translateZ(30px) rotateY(30deg);
+        -webkit-transition-property: transform, box-shadow, margin;
+        -webkit-transition-duration: 0.1s;
+    }
+    /* Animate everything to their 2d state when hovering the parent. */
+    ul.movieposters li:hover .movieinfo {
+        -webkit-transform: translateZ(20px) rotateY(200deg);
+        margin: -100px 0 0 30px;
+    }
+    /* Some basic CSS for the movie info */
+    .movieinfo h3 {
+        color: #070606;
+        font-variant: small-caps;
+        font-family: Georgia, serif, Times;
+        text-align: center;
+        padding-bottom: 15px;
+    }
+    .movieinfo p small {
+        padding-bottom: 20px;
+        color: #050505
+    }
+    .movieinfo a {
+        background-color: #050405;
+        padding: 5px 10px;
+        color: rgb(250, 246, 246);
+        text-decoration: none;
+        display: block;
+        width: 80px;
+        text-align: center;
+        margin: 0 auto;
+        -moz-border-radius: 5px;
+        -webkit-border-radius: 5px;
+    }
+    .movieinfo a:hover {
+        background-color: #1c0422;
+        color: #fff;
+    }
+}
